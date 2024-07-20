@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -33,6 +35,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // added view binding
+    buildFeatures {
+        viewBinding = true
+    }
+}
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
@@ -45,4 +55,22 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // dagger-hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
+    // lifecycle and livedata dependency not added
+
+    // retrofit & okhttp
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+
+    // coroutines dependency not added
+
+    // navigation framework dependency not added
+
+    // spinner (loader) dependency not added
+
 }
