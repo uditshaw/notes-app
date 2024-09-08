@@ -60,17 +60,23 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
-    // lifecycle and livedata dependency not added
+    // lifecycle viewmodel and livedata dependency
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // retrofit & okhttp
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.okhttp)
+    implementation(libs.okhttp) // for using interceptor concept
 
-    // coroutines dependency not added
+    // coroutines dependency
+    implementation(libs.kotlinx.coroutines.android)
 
-    // navigation framework dependency not added
+    // navigation framework dependency - for single activity and multiple fragments
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
-    // spinner (loader) dependency not added
+    // spinner (loader) dependency
+    implementation(libs.android.spinkit)
 
 }
