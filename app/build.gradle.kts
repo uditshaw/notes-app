@@ -77,6 +77,6 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
 
     // spinner (loader) dependency
-    implementation(libs.android.spinkit)
+//    implementation(libs.android.spinkit)
 
 }
